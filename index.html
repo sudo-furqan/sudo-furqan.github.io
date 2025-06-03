@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
       body {
         color: #293132;
@@ -62,6 +64,7 @@
       }
       header {
         text-align: center;
+        padding-bottom: 20px; /* Tambahkan padding di bagian bawah header */
       }
       a {
         color: #547AA5;
@@ -110,6 +113,35 @@
         color: #50D8D7;
         text-decoration: underline;
       }
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5em;
+        margin-top: 1.2em;
+        margin-bottom: 0.5em; /* Tambahkan margin bawah */
+      }
+      .social-icons a {
+        color: #4F5165;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(80, 216, 215, 0.1);
+        border: 1px solid rgba(80, 216, 215, 0.3);
+      }
+      .social-icons a:hover {
+        color: #50D8D7;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 10px rgba(80, 216, 215, 0.2);
+      }
+      .social-icons i {
+        font-size: 1.2em;
+      }
       header ul {
         display: flex;
         justify-content: center;
@@ -157,6 +189,9 @@
         section > h1:first-of-type {
           margin-top: 1.5em;
         }
+        header {
+          padding-bottom: 25px; /* Tambah padding lebih besar di mobile */
+        }
         header ul {
           flex-direction: column;
           align-items: center;
@@ -167,6 +202,14 @@
         .skills-container {
           justify-content: center;
         }
+        .social-icons {
+          gap: 1em;
+          margin-bottom: 1em; /* Lebih besar di mobile */
+        }
+        .social-icons a {
+          width: 35px;
+          height: 35px;
+        }
       }
     </style>
   </head>
@@ -176,7 +219,22 @@
         <img src="profile.png" alt="Furqan" class="profile-pic">
         <h1>Furqan</h1>
         <p style="color: #4F5165;">"A passionate and adaptive lifelong learner, committed to continuous personal and professional development."</p>
+        
+        <!-- Tambahan ikon sosial media -->
+        <div class="social-icons">
+          <a href="https://github.com/sudo-furqan" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://instagram.com/sudo_furqan" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:furqanst@mail.ugm.ac.id" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </header>
+      
+      <!-- Content section remains unchanged -->
       <section>
         <h1>About Me</h1>
         <p>
