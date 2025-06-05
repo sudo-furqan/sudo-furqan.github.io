@@ -1,33 +1,43 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Furqan - Lifelong learner.</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
       body {
         color: #293132;
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
       }
+      
+      .wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
       section {
         max-width: 700px;
         margin: 0 auto;
       }
+      
       h1, h2 {
         color: #547AA5;
         border-bottom: 1px solid #eaecef;
         padding-bottom: 0.3em;
       }
+      
       section > h1:first-of-type {
         border-bottom: none;
       }
+      
       header h1 {
         border-bottom: none;
         color: #293132;
@@ -39,6 +49,7 @@
         position: relative;
         display: inline-block;
       }
+      
       header h1:after {
         content: '';
         position: absolute;
@@ -48,55 +59,73 @@
         left: 20%;
         background: linear-gradient(to right, transparent, #50D8D7, transparent);
       }
+      
       h1 {
         font-size: 1.8em;
       }
+      
       h2 {
         font-size: 1.4em;
         margin-top: 1.8em;
       }
+      
       ul {
         margin-bottom: 1.5em;
+        padding-left: 20px;
       }
+      
       p {
         text-align: justify;
         line-height: 1.6;
+        margin-bottom: 1em;
       }
+      
       header {
         text-align: center;
-        padding-bottom: 20px; /* Tambahkan padding di bagian bawah header */
+        padding-bottom: 20px;
+        margin-bottom: 30px;
       }
+      
       a {
         color: #547AA5;
+        text-decoration: none;
+        transition: color 0.3s ease;
       }
+      
       a:hover {
         color: #50D8D7;
       }
+      
       .exp-title {
         font-size: 1.1em;
         color: #547AA5;
         display: block;
         margin-bottom: 0.4em;
       }
+      
       .exp-detail {
         margin-left: 1.2em;
         color: #4F5165;
         font-size: 0.98em;
         margin-bottom: 0.8em;
       }
+      
       .exp-detail li {
         margin-bottom: 0.5em;
         line-height: 1.5;
       }
+      
       .edu-title {
         font-weight: bold;
         color: #547AA5;
         margin-right: 0.5em;
       }
+      
       .portfolio-list {
         list-style: none;
         padding-left: 0;
       }
+      
       .portfolio-list li {
         margin-bottom: 1em;
         padding: 0.8em;
@@ -104,22 +133,27 @@
         border-left: 4px solid #547AA5;
         border-radius: 3px;
       }
+      
       .portfolio-list li a {
         font-weight: bold;
         color: #547AA5;
-        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 0.4em;
       }
+      
       .portfolio-list li a:hover {
         color: #50D8D7;
         text-decoration: underline;
       }
+      
       .social-icons {
         display: flex;
         justify-content: center;
         gap: 1.5em;
         margin-top: 1.2em;
-        margin-bottom: 0.5em; /* Tambahkan margin bawah */
+        margin-bottom: 0.5em;
       }
+      
       .social-icons a {
         color: #4F5165;
         text-decoration: none;
@@ -134,30 +168,17 @@
         background: rgba(80, 216, 215, 0.1);
         border: 1px solid rgba(80, 216, 215, 0.3);
       }
+      
       .social-icons a:hover {
         color: #50D8D7;
         transform: translateY(-3px);
         box-shadow: 0 5px 10px rgba(80, 216, 215, 0.2);
       }
+      
       .social-icons i {
         font-size: 1.2em;
       }
-      header ul {
-        display: flex;
-        justify-content: center;
-        gap: 1em;
-      }
-      header ul li {
-        width: auto;
-        float: none;
-        border: none;
-        height: auto;
-      }
-      header ul a {
-        line-height: normal;
-        height: auto;
-        padding: 0;
-      }
+      
       .profile-pic {
         border-radius: 50%;
         width: 150px;
@@ -168,12 +189,14 @@
         box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         border: 3px solid #50D8D7;
       }
+      
       .skills-container {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
         margin-bottom: 20px;
       }
+      
       .skill-tag {
         background: rgba(80, 216, 215, 0.1);
         border: 1px solid rgba(80, 216, 215, 0.3);
@@ -181,34 +204,47 @@
         padding: 4px 10px;
         font-size: 0.85em;
         color: #474044;
+        transition: all 0.3s ease;
       }
+      
+      .skill-tag:hover {
+        background: rgba(80, 216, 215, 0.2);
+        transform: translateY(-2px);
+      }
+      
       @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        
         section {
           padding: 0 0.8em;
         }
+        
         section > h1:first-of-type {
           margin-top: 1.5em;
         }
+        
         header {
-          padding-bottom: 25px; /* Tambah padding lebih besar di mobile */
+          padding-bottom: 25px;
         }
-        header ul {
-          flex-direction: column;
-          align-items: center;
-        }
-        header ul li {
-          margin-bottom: 0.5em;
-        }
+        
         .skills-container {
           justify-content: center;
         }
+        
         .social-icons {
           gap: 1em;
-          margin-bottom: 1em; /* Lebih besar di mobile */
+          margin-bottom: 1em;
         }
+        
         .social-icons a {
           width: 35px;
           height: 35px;
+        }
+        
+        .portfolio-list li {
+          padding: 0.6em;
         }
       }
     </style>
@@ -220,7 +256,6 @@
         <h1>Furqan</h1>
         <p style="color: #4F5165;">"A passionate and adaptive lifelong learner, committed to continuous personal and professional development."</p>
         
-        <!-- Tambahan ikon sosial media -->
         <div class="social-icons">
           <a href="https://github.com/sudo-furqan" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
@@ -234,11 +269,13 @@
         </div>
       </header>
       
-      <!-- Content section remains unchanged -->
       <section>
         <h1>About Me</h1>
         <p>
-          Tech-savvy research enthusiast with a background in IT support, web development, and digital content. Currently pursuing a Master's degree in Computer Science at Universitas Gadjah Mada with a research focus on Computer Vision. Adaptive, collaborative, and passionate about exploring emerging technologies to build impactful digital solutions.
+          Currently pursuing a Master's degree in Computer Science at Universitas Gadjah Mada with a research focus on Computer Vision. I work as a Freelance IT Tutor, teaching basic web development (HTML, CSS, JavaScript) and introducing programming logic to elementary students using Scratch. I design personalized lesson materials, deliver engaging offline sessions, and provide regular progress updates to parents.
+        </p>
+        <p>
+          Passionate about education and technology, I am committed to helping students grow through adaptive and student-centered learning.
         </p>
 
         <h2>Skills</h2>
@@ -249,7 +286,6 @@
           <span class="skill-tag">Detectron2</span>
           <span class="skill-tag">Albumentations</span>
           <span class="skill-tag">Arduino</span>
-          <span class="skill-tag">Laravel</span>
           <span class="skill-tag">HTML/CSS</span>
           <span class="skill-tag">JavaScript</span>
         </div>
@@ -265,32 +301,28 @@
               <li>Conducted regular evaluations and provided constructive feedback to parents or guardians.</li>
             </ul>
           </li>
-          <li>
-            <span class="exp-title"><strong>Jul 2023 - 2024</strong><br>SDI Al Azhar 21 — IT Support</span>
-            <ul class="exp-detail">
-              <li>Performed maintenance and troubleshooting of computer systems to ensure smooth daily operations.</li>
-              <li>Managed network stability and internet availability across the organization.</li>
-              <li>Maintained peripheral devices such as printers, projectors, and photocopiers.</li>
-              <li>Conducted routine hardware and software maintenance to prevent disruptions and maintain optimal system performance.</li>
-            </ul>
-          </li>
         </ul>
 
         <h2>Education</h2>
         <ul>
           <li>
-            <span class="edu-title">2024 – Present</span><br>Master of Computer Science, Universitas Gadjah Mada.<br>
+            <span class="edu-title">2024 – Present</span><br>Master of Computer Science, Universitas Gadjah Mada.
           </li>
           <li>
-            <span class="edu-title">2016 - 2020</span><br>Bachelor of Computer Engineering, Universitas Teknologi Yogyakarta.<br>
+            <span class="edu-title">2016 - 2020</span><br>Bachelor of Computer Engineering, Universitas Teknologi Yogyakarta.
           </li>
         </ul>
 
         <h2>Code & Craft</h2>
         <ul class="portfolio-list">
-          <li><a href="#">Colon Polyp Detection in Colonoscopy Images Based on Improved DiffusionDet</a><br>Enhanced colon polyp detection by integrating ICIoU loss and Swin Transformer-Tiny into DiffusionDet, achieving significant improvements in localization accuracy on the Kvasir dataset.</li>
-          <li><a href="#">Design and Development of an Internet of Things (IoT)-based Noise Level Monitoring System</a><br>IoT noise level monitoring system using Arduino and sound sensor for real-time environmental data tracking.</li>
-          <li><a href="#">Design and Development of an E-Learning Platform for Introducing Programming with Scratch and Python to Children</a><br>Development of a Laravel-based e-learning platform that introduces children to programming by combining the visual creativity of Scratch with the logical foundations of Python in an interactive environment.
+          <li>
+            <a href="#">Colon Polyp Detection in Colonoscopy Images Based on Improved DiffusionDet</a>
+            <br>Enhanced colon polyp detection by integrating ICIoU loss and Swin Transformer-Tiny into DiffusionDet, achieving significant improvements in localization accuracy on the Kvasir dataset.
+          </li>
+          <li>
+            <a href="#">Design and Development of an Internet of Things (IoT)-based Noise Level Monitoring System</a>
+            <br>IoT noise level monitoring system using Arduino and sound sensor for real-time environmental data tracking.
+          </li>
         </ul>
       </section>
     </div>
